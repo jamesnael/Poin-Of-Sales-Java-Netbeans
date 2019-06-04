@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a4482bbf-3bc8-4868-bfb3-e8f56c465609">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tgl1" class="java.util.Date"/>
+	<parameter name="tgl2" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     query_laporan_pemasokan.`kd_pasok` AS query_laporan_pemasokan_kd_pasok,
+     query_laporan_pemasokan.`kd_barang` AS query_laporan_pemasokan_kd_barang,
+     query_laporan_pemasokan.`nama_barang` AS query_laporan_pemasokan_nama_barang,
+     query_laporan_pemasokan.`jumlah` AS query_laporan_pemasokan_jumlah,
+     query_laporan_pemasokan.`kd_pemasok` AS query_laporan_pemasokan_kd_pemasok,
+     query_laporan_pemasokan.`pemasok` AS query_laporan_pemasokan_pemasok,
+     query_laporan_pemasokan.`tgl_masuk` AS query_laporan_pemasokan_tgl_masuk,
+     query_laporan_pemasokan.`stok_barang` AS query_laporan_pemasokan_stok_barang
+FROM
+     `query_laporan_pemasokan` query_laporan_pemasokan
+WHERE
+tgl_masuk BETWEEN $P{tgl1} AND $P{tgl2}]]>
+	</queryString>
+	<field name="query_laporan_pemasokan_kd_pasok" class="java.lang.String"/>
+	<field name="query_laporan_pemasokan_kd_barang" class="java.lang.String"/>
+	<field name="query_laporan_pemasokan_nama_barang" class="java.lang.String"/>
+	<field name="query_laporan_pemasokan_jumlah" class="java.lang.Integer"/>
+	<field name="query_laporan_pemasokan_kd_pemasok" class="java.lang.String"/>
+	<field name="query_laporan_pemasokan_pemasok" class="java.lang.String"/>
+	<field name="query_laporan_pemasokan_tgl_masuk" class="java.sql.Date"/>
+	<field name="query_laporan_pemasokan_stok_barang" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="802" height="36" uuid="d86305f4-880b-47bf-924e-c2a8faec2c88"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PASOK BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="47" width="802" height="36" uuid="11f9b506-88eb-47ba-af7a-99aa02435fb8"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[International Market G-Shop]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="4" width="100" height="35" uuid="b086f0be-2cf6-4f91-9471-2a5ce61acd4f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Periode   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="4" width="122" height="35" uuid="99368465-07ef-405a-a264-9a7299ab5e3d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tgl1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="242" y="4" width="38" height="35" uuid="4be35ea0-168c-40a1-a8cf-dfe09749e4e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="309" y="4" width="141" height="35" uuid="421add9d-1630-44b5-ac36-d2443287d9eb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tgl2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="0" width="802" height="1" uuid="cf71d386-5621-47fb-9632-c4ef92ae4f21"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="9" width="27" height="35" uuid="0888ac45-376c-477d-a6d9-3a4d3e3e42b1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="9" width="87" height="35" uuid="63a34f06-463c-4b2e-9dcf-ad5d7c3d1d42"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Pasok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="9" width="97" height="35" uuid="8d868325-c88b-4278-9a04-8795c48bb3f2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="9" width="167" height="35" uuid="9b42a5c3-424d-4899-bdf9-835299407de0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="9" width="63" height="35" uuid="cc3b54a5-9ebb-426b-8849-109bb2e30c84"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="9" width="98" height="35" uuid="b47e6a1a-7cd6-47c4-929d-71612abb63c7"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pemasok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="594" y="9" width="130" height="35" uuid="1fcba3e3-8b52-4491-b664-26cf41b437c5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="731" y="9" width="63" height="35" uuid="78e27ce2-1729-47ab-a775-4ca5fa502545"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stok]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="802" height="1" uuid="992c64b6-f2f6-4828-9c9d-20db93324129"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="242" y="9" width="167" height="35" uuid="64808936-c7ad-48d8-a3f2-d6360f369055"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{query_laporan_pemasokan_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="9" width="98" height="35" uuid="36bbd410-4bae-436b-a285-b3ddc369a927"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{query_laporan_pemasokan_pemasok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="9" width="63" height="35" uuid="93e56eb0-f407-474b-aff7-21cd02d7a161"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{query_laporan_pemasokan_jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="594" y="9" width="130" height="35" uuid="5ed85dff-025c-4b73-832b-4f0619a22b67"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{query_laporan_pemasokan_tgl_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="9" width="97" height="35" uuid="bd229bfd-0caf-4aaf-9d45-b4e888030422"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{query_laporan_pemasokan_kd_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="9" width="87" height="35" uuid="d5e2fb0f-a7ad-4152-a2a4-97c514227e68"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{query_laporan_pemasokan_kd_pasok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="9" width="27" height="35" uuid="766c78f4-dae4-41ce-9e7e-1b13f67e1073"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="731" y="9" width="63" height="35" uuid="9991eb8d-1961-4e16-b0db-fea00f0640ee"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{query_laporan_pemasokan_stok_barang}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="123" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="42" width="802" height="20" uuid="a51bfcbf-3e08-40d8-b32a-430c28f42cc4"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[Kecamatan Cicurug Kabupaten Sukabumi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="69" width="802" height="20" uuid="ec2096a5-bcfa-427a-8ccd-b7c91389c794"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[TELP : 0878-8551-1858]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="17" width="802" height="20" uuid="91e4c41d-ca96-490e-9645-707b61503ed1"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[Jl.Siliwangi No.52 Desa Cimelati]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="7" width="802" height="1" uuid="f7ff42f1-a3cc-4957-b63c-c7d8fe6adeaa"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

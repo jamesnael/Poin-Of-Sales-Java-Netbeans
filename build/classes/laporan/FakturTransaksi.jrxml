@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="400" pageHeight="450" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf7347c8-12c5-45ec-bc65-d8471ab58f5d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     query_faktur.`kd_transaksi` AS kd_transaksi,
+     query_faktur.`kd_barang` AS kd_barang,
+     query_faktur.`nama_barang` AS nama_barang,
+     query_faktur.`harga` AS harga,
+     query_faktur.`jumlah` AS jumlah,
+     query_faktur.`subtotal` AS subtotal,
+     query_faktur.`total` AS total,
+     query_faktur.`bayar` AS bayar,
+     query_faktur.`kembalian` AS kembalian,
+     query_faktur.`tgl_transaksi` AS tgl_transaksi
+FROM
+     `query_faktur` query_faktur]]>
+	</queryString>
+	<field name="kd_transaksi" class="java.lang.String"/>
+	<field name="kd_barang" class="java.lang.String"/>
+	<field name="nama_barang" class="java.lang.String"/>
+	<field name="harga" class="java.lang.Integer"/>
+	<field name="jumlah" class="java.lang.Integer"/>
+	<field name="subtotal" class="java.lang.Integer"/>
+	<field name="total" class="java.lang.Integer"/>
+	<field name="bayar" class="java.lang.Integer"/>
+	<field name="kembalian" class="java.lang.Integer"/>
+	<field name="tgl_transaksi" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="151" y="10" width="63" height="20" uuid="d63a7cd4-6694-4d2b-bf5c-ca65b14776f5"/>
+				<textElement>
+					<font fontName="Century Gothic" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[G-Shop]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="41" width="126" height="20" uuid="af8e4071-2b5b-4acc-b3cc-b1192b8f353a"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[International Market ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="80" width="360" height="1" uuid="a5d2d44c-472c-4530-8b32-d4f7e6685715"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="8" width="87" height="20" uuid="a13d743d-0792-4501-8ab3-a3fcec6f6bfb"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[NO TRANSAKSI :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="8" width="89" height="20" uuid="0bfe5a86-6611-4687-a505-afd7354a7fe5"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="8" width="96" height="20" uuid="d6442176-0efb-49d4-bf54-ab674517f3cf"/>
+				<textElement textAlignment="Right">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_transaksi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="38" width="360" height="1" uuid="d6175e28-3dd9-4729-a963-6ce3df73e97a"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="24" height="20" uuid="098bbfc2-f8bb-4a39-afa5-105dd53bdef3"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="10" width="137" height="20" uuid="a1fe5bca-48cc-41e4-8905-f38fd1bd239d"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="10" width="67" height="20" uuid="6b752d92-c9af-417c-aadb-b37774baa015"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="10" width="45" height="20" uuid="0d96ff7b-cdb3-4e19-9a96-784f8e855667"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="10" width="87" height="20" uuid="00c10263-6422-400e-9e21-425b55269625"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Subtotal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="14" width="22" height="20" uuid="590b65cb-c25c-48aa-a7ab-3e312c06868a"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="14" width="137" height="20" uuid="5095b0e5-060f-4486-9385-865412ef0def"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="14" width="67" height="20" uuid="1c814a08-e663-4d74-b9ab-7b1171116781"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="14" width="45" height="20" uuid="0363b6bf-79d5-4bc3-b718-44f3c49411a0"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="14" width="63" height="20" uuid="870e0cbc-10c2-4671-b89c-235e99c5b975"/>
+				<textElement textAlignment="Right">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="0" width="358" height="1" uuid="c619ef56-3198-430e-becb-d76270114b60"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="4" width="42" height="20" uuid="33e77a02-5741-463e-ade0-7ef9963a77ff"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[TOTAL ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="24" width="42" height="20" uuid="13c5d2d4-72f7-4af4-9d0d-3b233b6f1aad"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[BAYAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="45" width="57" height="20" uuid="fe7a5c9b-1811-4ed0-8664-dae886efae0d"/>
+				<textElement>
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[KEMBALI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="3" width="63" height="20" uuid="960b7de5-a1e7-4e56-a5a0-cf0622e73338"/>
+				<textElement textAlignment="Right">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="22" width="63" height="20" uuid="b29a6f12-e6cf-4173-bcd8-0b2127bb086a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="43" width="63" height="20" uuid="241fce68-9899-4d0b-aa50-a402af3e451b"/>
+				<textElement textAlignment="Right">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kembalian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="92" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-110" width="360" height="1" uuid="3644a377-585f-4077-b2ad-b7646fb2d575"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="13" width="360" height="20" uuid="cec32c6c-5bc5-471f-8ce5-a24741688cd4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Jl.Siliwangi No.52 Desa Cimelati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="38" width="360" height="20" uuid="f73d06aa-1050-4962-ba23-57ddfe5a8e49"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[Kecamatan Cicurug Kabupaten Sukabumi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="65" width="360" height="20" uuid="1be7f9c1-0ef6-4cce-82e0-93282ce0907d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11"/>
+				</textElement>
+				<text><![CDATA[TELP : 0878-8551-1858]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="358" height="1" uuid="701ef0de-a494-467e-8daa-73028ce5072b"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
